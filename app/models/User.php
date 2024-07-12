@@ -80,6 +80,7 @@ class User {
       $_SESSION['auth'] = 1;
 			$_SESSION['username'] = ucwords($username);
       $_SESSION['user_id'] = $rows['id'];
+      $_SESSION['is_admin'] = $rows['is_admin'];
 			unset($_SESSION['failedAuth']);
 			header('Location: /home');
 			die;

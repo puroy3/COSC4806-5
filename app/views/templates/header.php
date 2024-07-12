@@ -33,7 +33,7 @@ if (!isset($_SESSION['auth'])) {
         <li class="nav-item">
           <a class="nav-link" href="/reminders/create">Create a Reminder</a>
         </li>
-        <?php if (isset($_SESSION['is_admin'])) { ?>
+        <?php if ($_SESSION['is_admin'] == 1 && isset($_SESSION['is_admin'])) { ?>
           <li class="nav-item">
             <a class="nav-link" href="/reports">Reports</a>
           </li>                                         

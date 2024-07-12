@@ -1,7 +1,7 @@
 <?php
 class Reports extends Controller {
   public function __construct() {
-    if (!isset($_SESSION['auth'])) {
+    if (!isset($_SESSION['is_admin']) || !isset($_SESSION['auth']) || $_SESSION['auth'] != 1 || $_SESSION['is_admin'] != 1) {
       header('Location: /login');
       exit;
     }
