@@ -60,6 +60,19 @@ class Reminder {
       $rows = $statement->fetch(PDO::FETCH_ASSOC);
       return $rows;
     }
-    
+    public function getEveryReminder() {
+      $db = db_connect();
+      $statement = $db->prepare("select notes.*, users.username from notes join users on notes.user_id = users.id where notes.deleted = 0 order by notes.create_at desc");
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+    }
+    public function getUserMostReminders() {
+      $db = db_connect();
+      $statement = $db->prepare("select users.username, count(*) as reminder_count from notes join users on notes.user_id = users.id where notes.deleted = 0 group by notes.user_id order by reminder_count desc");
+      $statement->execute();
+      $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+    }
 }
   ?>
