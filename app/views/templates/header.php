@@ -27,16 +27,28 @@ if (!isset($_SESSION['auth'])) {
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
+  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Reminders
+        </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="/reminders">Reminders Page</a></li>
+      <li><a class="dropdown-item" href="/reminders/create">Create Reminder</a></li>
+  </ul>
+  </li>                                         
         <li class="nav-item">
-          <a class="nav-link" href="/reminders">Reminders</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/reminders/create">Create a Reminder</a>
-        </li>
         <?php if ($_SESSION['is_admin'] == 1 && isset($_SESSION['is_admin'])) { ?>
-          <li class="nav-item">
-            <a class="nav-link" href="/reports">Reports</a>
-          </li>                                         
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Reports
+        </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="/reports">Reports Page</a></li>
+      <li><a class="dropdown-item" href="/reports/everyReminder">All Reminders</a></li>
+      <li><a class="dropdown-item" href="/reports/mostRemindersPerson">User with Most Reminders</a></li>
+      <li><a class="dropdown-item" href="/reports/loginsTotal">Total Logins per user</a></li>
+  </ul>
+  </li>                                         
           <?php } ?>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>

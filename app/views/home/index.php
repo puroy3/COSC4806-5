@@ -11,7 +11,7 @@
                     </ol>
                   </nav>
                 </div>
-                <h2 class="display-5 text-center">Assignment 3</h2>
+                <h2 class="display-5 text-center">Assignment 5</h2>
                 <h1> Welcome, <?=$_SESSION['username'] ?></h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
