@@ -60,5 +60,6 @@ class Reminder {
       $rows = $statement->fetch(PDO::FETCH_ASSOC);
       return $rows;
     }
+    
 }
   ?>
