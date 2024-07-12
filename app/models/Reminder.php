@@ -62,7 +62,7 @@ class Reminder {
     }
     public function getEveryReminder() {
       $db = db_connect();
-      $statement = $db->prepare("select notes.*, users.username from notes join users on notes.user_id = users.id where notes.deleted = 0 order by notes.created_at desc");
+      $statement = $db->prepare("select notes.*, users.username from notes join users on notes.user_id = users.id order by notes.created_at desc");
       $statement->execute();
       $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
