@@ -7,7 +7,9 @@
     </ol>
   </nav>
 </div>
-<h1>All Reminders</h1>
+<div style="display: flex; align-items: center; justify-content: center;"> 
+<h1>All reminders report</h1>
+</div>
 <table class="table">
   <thead>
     <tr>

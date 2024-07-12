@@ -18,7 +18,7 @@ class Reports extends Controller {
   public function mostRemindersPerson() {
     $reminder = $this->model('Reminder');
     $users = $reminder->getUserMostReminders();
-    $this->view('reports/mostReminders', ['users' => $users]);
+    $this->view('reports/mostRemindersPerson', ['users' => $users]);
   }
 
   public function loginsTotal() {

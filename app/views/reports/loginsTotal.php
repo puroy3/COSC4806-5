@@ -7,7 +7,9 @@
     </ol>
   </nav>
 </div>
-<h1>Total logins by username</h1>
+<div style="display: flex; align-items: center; justify-content: center;"> 
+<h1>Total logins by username report</h1>
+</div>
 <canvas id="loginsTotalChart"></canvas>
 <script>
   const ctx = document.getElementById('loginsTotalChart');

@@ -7,7 +7,9 @@
     </ol>
   </nav>
 </div>
-<h1>User with the most reminders</h1>
+<div style="display: flex; align-items: center; justify-content: center;"> 
+<h1>User with the most reminders report</h1>
+</div>
 <canvas id="mostRemindersPersonChart"></canvas>
 <script>
   const ctx = document.getElementById('mostRemindersPersonChart');
