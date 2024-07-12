@@ -3,6 +3,14 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12 text-center">
+                <div style="display: flex; align-items: center; justify-content: center;"> 
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><?=ucwords($_SESSION['controller']);?></li>
+                    </ol>
+                  </nav>
+                </div>
                 <h2 class="display-5 text-center">Assignment 3</h2>
                 <h1> Welcome, <?=$_SESSION['username'] ?></h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
