@@ -2,6 +2,7 @@
 if (!isset($_SESSION['auth'])) {
     header('Location: /login');
 }
+  require_once 'app/views/components/breadcrumb.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,3 +57,18 @@ if (!isset($_SESSION['auth'])) {
     </div>
   </div>
 </nav>
+<div class="container">
+  <?php
+  $itemsForBreadcrumb = [
+    ['title' => 'Home', 'link' => '/home']
+  ];
+  if ($_SESSION['controller'] !== 'home') {
+    $itemsForBreadcrumb[] = ['title' => ucfirst($_SESSION['controller']), 'link' => '/' . $_SESSION['controller']];
+  }
+    if ($_SESSION['method'] !== 'index' && isset($_SESSION['method'])) {
+      $itemsForBreadcrumb[] = ['title' => ucfirst($_SESSION['method']), 'link' => '#'];
+    }
+      breadCrumb($itemsForBreadcrumb);
+?>
+</div>
+<main class="container">

@@ -2,6 +2,7 @@
 if (isset($_SESSION['auth']) == 1) {
     header('Location: /home');
 }
+  require_once 'app/views/components/breadcrumb.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,3 +33,15 @@ if (isset($_SESSION['auth']) == 1) {
         </div>
       </div>
     </nav>
+<div class="container">
+  <?php
+  $itemsForBreadcrumb = [
+      ['title' => 'Home', 'link' => '/']
+  ];
+  if ($_SESSION['controller'] !== 'home') {
+      $itemsForBreadcrumb[] = ['title' => ucfirst($_SESSION['controller']), 'link' => '#'];
+}
+breadCrumb($itemsForBreadcrumb);
+?>
+</div>
+<main class="container">
