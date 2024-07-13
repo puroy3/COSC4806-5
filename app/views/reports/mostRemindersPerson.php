@@ -13,7 +13,7 @@ foreach ($data['users'] as $user) {
 }
 ?>
 <div style="display: flex; justify-content: center;">
-  <h4>User: <?= htmlspecialchars($userWithTheMostReminders['username']) ?> with <?= $userWithTheMostReminders['reminder_count'] ?> reminders</h4>
+  <h4>Most: <?= htmlspecialchars($userWithTheMostReminders['username']) ?> with <?= $userWithTheMostReminders['reminder_count'] ?> reminders</h4>
 </div>
 <div class="container">
   <div class="row justify-content-center">
