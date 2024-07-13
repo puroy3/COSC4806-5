@@ -15,6 +15,29 @@ foreach ($data['users'] as $user) {
 <div style="display: flex; justify-content: center;">
   <h4>User: <?= htmlspecialchars($userWithTheMostReminders['username']) ?> with <?= $userWithTheMostReminders['reminder_count'] ?> reminders</h4>
 </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>Number of Reminders</th>
+        </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($data['users'] as $user) { ?>
+          <tr>
+            <td><?= htmlspecialchars($user['username']) ?></td>
+            <td><?= $user['reminder_count'] ?></td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>
+<br>
 <div style="display: flex; justify-content: center;">
   <div style="width: 500px; height: 500px;">
     <canvas id="mostRemindersPersonChart"></canvas>
