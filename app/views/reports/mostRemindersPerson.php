@@ -2,6 +2,19 @@
 <div style="display: flex; align-items: center; justify-content: center;"> 
 <h1>User with the most reminders report</h1>
 </div>
+<?php
+$maximumReminders = 0;
+$userWithTheMostReminders = null;
+foreach ($data['users'] as $user) {
+  if ($user['reminder_count'] > $maximumReminders) {
+    $maximumReminders = $user['reminder_count'];
+    $userWithTheMostReminders = $user;
+  }
+}
+?>
+<div style="display: flex; justify-content: center;">
+  <h4>User: <?= htmlspecialchars($userWithTheMostReminders['username']) ?> with <?= $userWithTheMostReminders['reminder_count'] ?> reminders</h4>
+</div>
 <div style="display: flex; justify-content: center;">
   <div style="width: 500px; height: 500px;">
     <canvas id="mostRemindersPersonChart"></canvas>
@@ -21,7 +34,7 @@
     },
     options: {
         maintainAspectRatio: false,
-        reponsive: true,
+        responsive: true,
         scales: {
           y: {
             beginAtZero: true
